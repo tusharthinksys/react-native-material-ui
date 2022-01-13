@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved, import/extensions */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Easing, StyleSheet, Text } from 'react-native';
+import { Animated, Easing, StyleSheet, Text, I18nManager } from 'react-native';
 /* eslint-enable import/no-unresolved, import/extensions */
 import { ViewPropTypes } from '../utils';
 import withTheme from '../styles/withTheme';
@@ -34,7 +34,8 @@ const defaultProps = {
   iconSet: null,
 };
 
-const SEARCH_FORWARD_ICON = 'arrow-forward';
+// const SEARCH_FORWARD_ICON = 'arrow-forward';
+const SEARCH_FORWARD_ICON = I18nManager.isRTL ? 'arrow-back' : 'arrow-forward';
 
 function shouldUpdateStyles(props, nextProps) {
   if (props.style !== nextProps.styles) {
