@@ -92,6 +92,11 @@ class LeftElement extends PureComponent {
     if (shouldUpdateStyles(this.props, nextProps)) {
       this.setState({ styles: getStyles(nextProps, this.context) });
     }
+    
+      if (isSearchActive && nextProps.closeSearch && nextProps.onSearchClose) {
+          nextProps.onSearchClose();
+    }
+    
   }
 
   animateIcon = activate => {
